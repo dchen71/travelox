@@ -37,7 +37,7 @@
 					<li><%= link_to 'Sign up','#', id: 'signup' %></li>					
 					<li><%= link_to 'Log in', '#', id: 'login' %></li>
 					<% else %>
-					<li><%= link_to 'Log out', destroy_user_session_path, method: 'destroy' %></li>
+					<li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
 					<% end %>
 				</ul>
 			</div>
@@ -52,7 +52,6 @@
 
 <%= render 'shared/login' %>
 <%= render 'shared/signup' %>
-<%= render 'shared/password' %>
 
 </body>
 </html>
