@@ -9,48 +9,11 @@
 </head>
 <body>
 
-	<nav class='navbar navbar-default'>
-		<div class="container">
-			<div class="navbar-header">
-				<%= link_to 'Travelox', root_path, class: 'navbar-brand' %>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li <% if current_page?(root_path) %>class="active"<% end %>><a href="#">About</a></li>
-					<li class="dropdown">
-						<a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							Test
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li class="dropdown-header">Header</li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Cat</a></li>
-							<li role="separator" class="divider"></li>
-							<li class="dropdown-header">Header</li>
-							<li><a href="#">Cat</a></li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<% unless signed_in? %>
-					<li><%= link_to 'Sign up','#', id: 'signup' %></li>					
-					<li><%= link_to 'Log in', '#', id: 'login' %></li>
-					<% else %>
-					<li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<%= render 'shared/header' %>
+
 <%= yield %>
 
-	<footer>
-		<div class="container">
-			<em><p><span class="glyphicon glyphicon-copyright-mark"></span>2015 Travelox</p></em>
-			<em><p>dchen71</p></em>
-		</div>
-	</footer>
+<%= render 'shared/footer' %>
 
 <%= render 'shared/login' %>
 <%= render 'shared/signup' %>
