@@ -34,8 +34,8 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<% unless signed_in? %>
-					<li><%= link_to 'Sign in',new_user_registration_path %></li>					
-					<li><%= link_to 'Log in', new_user_session_path %></li>
+					<li><%= link_to 'Sign up','#', id: 'signup' %></li>					
+					<li><%= link_to 'Log in', '#', id: 'login' %></li>
 					<% else %>
 					<li><%= link_to 'Log out', destroy_user_session_path, method: 'destroy' %></li>
 					<% end %>
@@ -49,6 +49,10 @@
 		<em><p><span class="glyphicon glyphicon-copyright-mark"></span>2015</p></em>
 		<em><p>dchen71</p></em>
 	</footer>
+
+<%= render 'shared/login' %>
+<%= render 'shared/signup' %>
+<%= render 'shared/password' %>
 
 </body>
 </html>
