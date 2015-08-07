@@ -1,0 +1,40 @@
+  <nav class='navbar navbar-default'>
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Travelox', root_path, class: 'navbar-brand' %>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li <% if current_page?(root_path) %>class="active"<% end %>><%= link_to 'Home', root_path %></li>
+          <li <% if current_page?(about_path) %>class="active"<% end %>><%= link_to 'About', about_path %></li>
+          <li class="dropdown">
+            <a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Destinations
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">North America</li>
+              <li <% if current_page?(sfo_path) %>class="active"<% end %>><%= link_to 'San Francisco', sfo_path %></li>
+              <li <% if current_page?(nyc_path) %>class="active"<% end %>><%= link_to 'New York CIty', nyc_path %></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Europe</li>
+              <li <% if current_page?(prg_path) %>class="active"<% end %>><%= link_to 'Prague', prg_path %></li>
+              <li <% if current_page?(mxp_path) %>class="active"<% end %>><%= link_to 'Milan', mxp_path %></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Asia</li>
+              <li <% if current_page?(nrt_path) %>class="active"<% end %>><%= link_to 'Tokyo', nrt_path %></li>
+            </ul>
+          </li>
+          <li <% if current_page?(about_path) %>class="active"<% end %>><%= link_to 'Search', about_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% unless signed_in? %>
+          <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
+          <li><%= link_to 'Log in', '#', id: 'login' %></li>
+          <% else %>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
