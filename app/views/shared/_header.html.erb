@@ -25,9 +25,9 @@
               <li <% if current_page?(nrt_path) %>class="active"<% end %>><%= link_to 'Tokyo', nrt_path %></li>
             </ul>
           </li>
-          <li <% if current_page?(about_path) %>class="active"<% end %>><%= link_to 'Search', about_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li <% if current_page?(about_path) %>class="active"<% end %>><%= link_to 'Search', about_path %></li>
           <% unless signed_in? %>
           <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
           <li><%= link_to 'Log in', '#', id: 'login' %></li>
