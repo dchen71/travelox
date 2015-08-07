@@ -1,0 +1,29 @@
+<% provide(:title, @city.city) %>
+<div id="<%= @city.background_id %>"></div>
+<div class="container">
+	<div class="container content">
+		<div class="dest-overview">
+			<h1><%= @city.city %></h1>
+			<h2>Overview</h2>
+			<p><%= @city.overview %></p>
+		</div>
+		<div class="dest-cont">
+			<div class="">
+				<h2>Culture</h2>
+				<p><%= @city.culture %></p>
+			</div>
+			<div>
+				<h2>Transportation</h2>
+				<p><%= @city.transportation %></p>
+			</div>
+			<div>
+				<h2>Food</h2>
+				<p><%= @city.food %></p>
+			</div>
+			<div>
+				<h2>Entertainment</h2>
+				<p><%= @city.entertainment %></p>
+			</div>
+		</div>
+	</div>
+</div>

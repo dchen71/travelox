@@ -14,15 +14,15 @@
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">North America</li>
-              <li <% if current_page?(sfo_path) %>class="active"<% end %>><%= link_to 'San Francisco', sfo_path %></li>
-              <li <% if current_page?(nyc_path) %>class="active"<% end %>><%= link_to 'New York CIty', nyc_path %></li>
+              <li <% if current_page?(city_path(:sfo)) %>class="active"<% end %>><%= link_to 'San Francisco', city_path(:sfo) %></li>
+              <li <% if current_page?(city_path(:nyc)) %>class="active"<% end %>><%= link_to 'New York CIty', city_path(:nyc) %></li>
               <li role="separator" class="divider"></li>
               <li class="dropdown-header">Europe</li>
-              <li <% if current_page?(prg_path) %>class="active"<% end %>><%= link_to 'Prague', prg_path %></li>
-              <li <% if current_page?(mxp_path) %>class="active"<% end %>><%= link_to 'Milan', mxp_path %></li>
+              <li <% if current_page?(city_path(:prg)) %>class="active"<% end %>><%= link_to 'Prague', city_path(:prg) %></li>
+              <li <% if current_page?(city_path(:mxp)) %>class="active"<% end %>><%= link_to 'Milan', city_path(:mxp) %></li>
               <li role="separator" class="divider"></li>
               <li class="dropdown-header">Asia</li>
-              <li <% if current_page?(nrt_path) %>class="active"<% end %>><%= link_to 'Tokyo', nrt_path %></li>
+              <li <% if current_page?(city_path(:nrt)) %>class="active"<% end %>><%= link_to 'Tokyo', city_path(:nrt) %></li>
             </ul>
           </li>
         </ul>

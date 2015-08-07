@@ -1,22 +1,5 @@
 class DestinationsController < ApplicationController
-	def nyc
-
+	def show
+		@city = Destination.find_by(code: params[:code].upcase)
 	end
-
-	def prg
-
-	end
-
-	def nrt
-
-	end
-
-	def sfo
-
-	end
-
-	def mxp
-
-	end
-
 end
