@@ -13,17 +13,19 @@ Application
 }
 
 //Uses Open Sans from Google fonts
-body {
+body,html {
 	font-family: 'Open Sans', sans-serif;
+	height: 100%;
 }
 
 footer{
-	position: fixed;
 	width: 100%;
 	bottom: 0;
 	background-color: $footer-color;
     box-shadow: 5px -1px grey;
-    margin-top: 30px;
+    height: 60px;
+    margin-top: 90px;
+    position: relative;
 }
 
 //Background image base
@@ -42,13 +44,15 @@ footer{
 StaticPages
  */
 
-.content{
+#page-wrapper{
 	background-color: $content-color;opacity: 0.95;
 	padding-top: 30px;
 	padding-bottom: 60px;
-	margin-top: 30px;
-	margin-bottom: 90px;
+
     box-shadow: 2px 2px grey;
+    min-height: 79.8%;
+    height: auto !important;
+    margin: 30px auto -60px;
 }
 
 //Background image of the home page
