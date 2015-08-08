@@ -29,9 +29,9 @@
 			<h3>Use Travelox Today!</h3>
 			<p>Searching is free, sign up and search today!</p>
 			<% if signed_in? %>
-			<%= link_to 'Search', '#', class: 'btn btn-info'%>
+			<div class="signed-in"><%= link_to 'Search', '#', class: 'btn btn-info'%></div>
 			<% else %>
-          	<p><a href="#signup-modal" data-toggle="modal">Sign up</a> or <a href="#login-modal" data-toggle="modal">Login</a> to search</p>
+          	<div class="signed-out"><p><a href="#signup-modal" data-toggle="modal">Sign up</a> or <a href="#login-modal" data-toggle="modal">Login</a> to search</p></div>
 			<% end %>
 		</div>
 		</div>
