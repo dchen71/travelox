@@ -6,7 +6,10 @@
         <h2 class="text-center">Log in</h2>
       </div>
       <div class="modal-body text-center">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                               :html => {:id => "log_in_user"},
+                               :format => :json,
+                               :remote => true ) do |f| %>
           <div class="form-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true %>
@@ -33,14 +36,12 @@
       <div class="modal-footer">
         <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
         <div class="links pull-right">
-            <%= link_to "Sign up", '#' %><br />
-            <%= link_to "Forgot your password?", '#' %><br />
+            <%= link_to "Sign up", '#', id: 'signup_load' %><br />
+            <%= link_to "Forgot your password?", '#', id: 'forgot_load' %><br />
         </div>
       </div>
       
     </div>
   </div>
 </div>
-
-
 
