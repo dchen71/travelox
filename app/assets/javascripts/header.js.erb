@@ -1,0 +1,41 @@
+//Setup the modals
+$(document).ready(function(){
+    $("#signup").click(function(){
+        $("#signup-modal").modal();
+    });
+    $("#login").click(function(){
+        $("#login-modal").modal();
+    });
+});
+
+//Ajax correctors
+$(document).ready(function() {
+
+
+
+});
+
+/*
+$.ajaxSetup
+headers:
+'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+
+$('#login_btn').on 'click', (event) ->
+$.ajax API_URL + 'users',
+type: 'POST'
+dataType: 'json'
+data: {
+"utf8" : "✓"
+"authenticity_token" : $('#auth').val()
+"user" :
+"email" : "xxxxx@xxxx.xx"
+"password" : xxxxxxxx
+"password_confirmation" : xxxxxxx
+"commit" : "Sign up"
+}
+error: (jqXHR, textStatus, errorThrown) ->
+$('body').append "AJAX Error: #{textStatus}"
+success: (data, textStatus, jqXHR) ->
+$('body').append "AJAX Success: #{textStatus}"
+
+ */
