@@ -26,16 +26,19 @@
             </ul>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
           <% unless signed_in? %>
           <div class="signed_in">
-            <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
-            <li><%= link_to 'Log in', '#', id: 'login' %></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
+              <li><%= link_to 'Log in', '#', id: 'login' %></li>
+            <ul>
           </div>
           <% else %>
           <div class="signed_out">
-            <li <% if current_page?(search_path) %>class="active"<% end %>><%= link_to 'Search', search_path %></li>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li <% if current_page?(search_path) %>class="active"<% end %>><%= link_to 'Search', search_path %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+            </ul>
           </div>
           <% end %>
         </ul>

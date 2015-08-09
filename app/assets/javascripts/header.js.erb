@@ -31,22 +31,51 @@ $(document).ready(function() {
 									      '</div>');
 	});
 
-	//Ajax checker the forgot password form
-	$("#forgot_password_user").on("ajax:success", function(e, data, status, xhr) {
+	//Ajax checker for the sign up form
+	$("#sign_up_user").on("ajax:success", function(e, data, status, xhr) {
 		if(data.success ==  true){
-			$('#forgot_password_user').prepend('<div class="alert alert-success fade in">' +
+			$('#sign_up_user').prepend('<div class="alert alert-success fade in">' +
+											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+			 								  '<p>User successfully create, logging in</p>' + 
+			 								  '</div>');
+			$('signup').modal('hide');
+			$('.signed-out').hide();
+			$('#navbar').append('<div class="signed_in">' + 
+            					'<ul class="nav navbar-nav navbar-right">' + 
+              					'<li>><a href="/search">Search</a></li>' +
+              					'<li><a href="/users/sign_out" data-method="delete">Log out</a></li>' +
+            					'</ul>' +
+          						'</div>');
+		}
+		else{
+			$('#sign_up_user').prepend('<div class="alert alert-warning fade in">' +
+											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+			 								  '<p>Email already taken, or passwords must be greater than 8 characters and matching</p>' + 
+			 								  '</div>');
+		}
+	}).on("ajax:error", function(e, xhr, status, error) {
+		$('#sign_up_user').prepend('<div class="alert alert-danger fade in">' +
+									      '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+									      '<p>Error connecting to server</p>' + 
+									      '</div>');
+	});
+
+	//Ajax checker for the log in 
+	$("#log_in_user").on("ajax:success", function(e, data, status, xhr) {
+		if(data.success ==  true){
+			$('#log_in_user').prepend('<div class="alert alert-success fade in">' +
 											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
 			 								  '<p>Reset email sent</p>' + 
 			 								  '</div>');
 		}
 		else{
-			$('#forgot_password_user').prepend('<div class="alert alert-warning fade in">' +
+			$('#log_in_user').prepend('<div class="alert alert-warning fade in">' +
 											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
 			 								  '<p>User does not exist</p>' + 
 			 								  '</div>');
 		}
 	}).on("ajax:error", function(e, xhr, status, error) {
-		$('#forgot_password_user').prepend('<div class="alert alert-danger fade in">' +
+		$('#log_in_user').prepend('<div class="alert alert-danger fade in">' +
 									      '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
 									      '<p>Error connecting to server</p>' + 
 									      '</div>');
