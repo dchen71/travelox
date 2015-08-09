@@ -28,11 +28,15 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% unless signed_in? %>
-          <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
-          <li><%= link_to 'Log in', '#', id: 'login' %></li>
+          <div class="signed_in">
+            <li><%= link_to 'Sign up','#', id: 'signup' %></li>         
+            <li><%= link_to 'Log in', '#', id: 'login' %></li>
+          </div>
           <% else %>
-          <li <% if current_page?(about_path) %>class="active"<% end %>><%= link_to 'Search', about_path %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+          <div class="signed_out">
+            <li <% if current_page?(search_path) %>class="active"<% end %>><%= link_to 'Search', search_path %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+          </div>
           <% end %>
         </ul>
       </div>
