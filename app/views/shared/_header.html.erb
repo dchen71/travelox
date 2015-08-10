@@ -37,7 +37,7 @@
           <div class="signed_in">
             <ul class="nav navbar-nav navbar-right">
               <li <% if current_page?(search_path) %>class="active"<% end %>><%= link_to 'Search', search_path %></li>
-              <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete', id: 'logout' %></li>
             </ul>
           </div>
           <% end %>

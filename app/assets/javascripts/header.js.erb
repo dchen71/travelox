@@ -43,7 +43,7 @@ $(document).ready(function() {
 			$('#navbar').append('<div class="signed_in">' + 
             					'<ul class="nav navbar-nav navbar-right">' + 
               					'<li><a href="/search">Search</a></li>' +
-              					'<li><a href="/users/sign_out" data-method="delete">Log out</a></li>' +
+              					'<li><a href="/users/sign_out" data-method="delete" id="logout">Log out</a></li>' +
             					'</ul>' +
           						'</div>');
 			$('#notices').append('<div class="alert alert-success fade in">' + 
@@ -76,7 +76,7 @@ $(document).ready(function() {
 			$('#navbar').append('<div class="signed_in">' + 
             					'<ul class="nav navbar-nav navbar-right">' + 
               					'<li><a href="/search">Search</a></li>' +
-              					'<li><a href="/users/sign_out" data-method="delete">Log out</a></li>' +
+              					'<li><a href="/users/sign_out" data-method="delete" id="logout">Log out</a></li>' +
             					'</ul>' +
           						'</div>');
 			$('#notices').append('<div class="alert alert-success fade in">' + 
@@ -87,7 +87,7 @@ $(document).ready(function() {
 		else{
 			$('#log_in_user').prepend('<div class="alert alert-warning fade in">' +
 											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-			 								  '<p>Email already taken, or passwords must be greater than 8 characters and matching</p>' + 
+			 								  '<p>Email/password combination incorect</p>' + 
 			 								  '</div>');
 		}
 	}).on("ajax:error", function(e, xhr, status, error) {
