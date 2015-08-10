@@ -1,1 +1,2 @@
 # travelox
+Travelox is a site created under responsive design principles in which elements are placed into grids to facilitate consistent viewining upon different platforms. It features ajax modal sessions, users, and password setup.
