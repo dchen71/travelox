@@ -64,18 +64,30 @@ $(document).ready(function() {
 									      '</div>');
 	});
 
-	//Ajax checker for the log in 
+	//Ajax checker for the sign up form
 	$("#log_in_user").on("ajax:success", function(e, data, status, xhr) {
 		if(data.success ==  true){
 			$('#log_in_user').prepend('<div class="alert alert-success fade in">' +
 											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-			 								  '<p>Reset email sent</p>' + 
+			 								  '<p>Successfully logged in</p>' + 
 			 								  '</div>');
+			$('#login-modal').modal('hide');
+			$('.signed_out').remove();
+			$('#navbar').append('<div class="signed_in">' + 
+            					'<ul class="nav navbar-nav navbar-right">' + 
+              					'<li><a href="/search">Search</a></li>' +
+              					'<li><a href="/users/sign_out" data-method="delete">Log out</a></li>' +
+            					'</ul>' +
+          						'</div>');
+			$('#notices').append('<div class="alert alert-success fade in">' + 
+								'<button type="button" class="close" data-dismiss="alert" >×</button>' +
+								'<strong>Logged in</strong>' +
+								'</div>');
 		}
 		else{
 			$('#log_in_user').prepend('<div class="alert alert-warning fade in">' +
 											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-			 								  '<p>User does not exist</p>' + 
+			 								  '<p>Email already taken, or passwords must be greater than 8 characters and matching</p>' + 
 			 								  '</div>');
 		}
 	}).on("ajax:error", function(e, xhr, status, error) {
