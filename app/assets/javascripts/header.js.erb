@@ -39,10 +39,10 @@ $(document).ready(function() {
 			 								  '<p>User successfully create, logging in</p>' + 
 			 								  '</div>');
 			$('#signup-modal').modal('hide');
-			$('.signed-out').remove();
+			$('.signed_out').remove();
 			$('#navbar').append('<div class="signed_in">' + 
             					'<ul class="nav navbar-nav navbar-right">' + 
-              					'<li>><a href="/search">Search</a></li>' +
+              					'<li><a href="/search">Search</a></li>' +
               					'<li><a href="/users/sign_out" data-method="delete">Log out</a></li>' +
             					'</ul>' +
           						'</div>');
