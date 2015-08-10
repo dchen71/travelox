@@ -57,7 +57,7 @@ StaticPages
 
 //Background image of the home page
 #bg-illust{
-	background: url('bg1.jpg') no-repeat center center fixed;
+	background: image-url('bg1.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -67,25 +67,25 @@ Destinations
 
 //Background image of San Francisco
 #sfo-illust{
-	background: url('sfo.jpg') no-repeat right center fixed;
+	background: image-url('sfo.jpg') no-repeat right center fixed;
 }
 
 //Background image of New York City
 #nyc-illust{
-	background: url('nyc.jpg') no-repeat right center fixed;
+	background: image-url('nyc.jpg') no-repeat right center fixed;
 }
 
 //Background image of Prague
 #prg-illust{
-	background: url('prg.jpg') no-repeat center center fixed;
+	background: image-url('prg.jpg') no-repeat center center fixed;
 }
 
 //Background image of Milan
 #mxp-illust{
-	background: url('mxp.jpg') no-repeat center center fixed;
+	background: image-url('mxp.jpg') no-repeat center center fixed;
 }
 
 //Background image of Tokyo
 #nrt-illust{
-	background: url('nrt.jpg') no-repeat bottom center fixed;
+	background: image-url('nrt.jpg') no-repeat bottom center fixed;
 }
