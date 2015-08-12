@@ -65,11 +65,20 @@ StaticPages
 	background-size: cover;
 }
 
-.entericer{
+.enticer{
 	p{
 		word-break: break-word;
 	}
 }
+
+#about_btn, #search_btn{
+    -webkit-transition: width 5s; /* Safari */
+    transition: width 5s;
+    &:hover{
+    	width: 80px;
+    }
+}
+
 
 /*
 Destinations
