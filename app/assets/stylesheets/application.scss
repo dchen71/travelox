@@ -25,10 +25,21 @@ footer{
 	bottom: 0;
 	background-color: $footer-color;
     box-shadow: 5px -1px grey;
-    height: 7%;
+    height: 10%;
     margin-top: 120px;
     position: relative;
+}
 
+@media screen and (max-device-width: 600px) {
+    footer {
+		width: 100%;
+		bottom: 0;
+		background-color: $footer-color;
+    	box-shadow: 5px -1px grey;
+    	height: 10%;
+    	margin-top: 120px;
+    	position: absolute;
+    }
 }
 
 #home-footer{
@@ -54,9 +65,15 @@ footer{
 	padding-top: 30px;
 	padding-bottom: 60px;
 
-    min-height: 95%;
+    min-height: 75%;
+    height: auto;
     margin: 30px auto -60px;
+    &::after{
+		height: 20%;
+
+    }
 }
+
 
 #page-wrapper{
 	background-color: $content-color;opacity: 0.95;
