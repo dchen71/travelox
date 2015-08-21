@@ -2,6 +2,11 @@ class SearchesController < ApplicationController
 	before_action :logged_in?, only: [:search]
 
 	def search
+		if params[:start] && params[:dest]
+			link = "http://free.rome2rio.com/api/1.2/json/Search?key=#{ENV["rome"]}&oName=#{params[:start].delete(' ')}&dName=#{params[:dest].delete(' ')}"
+			response = HTTParty.get(link)
+			return render :json => {success: true , response: response}		
+		end
 	end
 
 	def query

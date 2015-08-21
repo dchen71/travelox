@@ -41,6 +41,9 @@ gem 'devise'
 #Gem to hide environment variables
 gem 'figaro'
 
+# Use httparty gem to simplify http requests
+gem 'httparty'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

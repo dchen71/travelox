@@ -50,4 +50,11 @@
 		  </a>
 		</div>
 	</div>
+	<%= form_tag search_path, method: :get do %>
+		<%= label_tag :From %>
+		<%= text_field_tag :start , '',:required => true %>
+		<%= label_tag :Dest %>
+		<%= text_field_tag :dest , '',:required => true %>
+		<%= submit_tag "Search" %>
+	<% end %>
 </div>
