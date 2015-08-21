@@ -4,9 +4,7 @@
 $footer-color: #A3A3C2;
 $content-color: rgb(238, 239, 238);
 
-/*
-Application
- */
+/* Application */
 
 .master{
 	height: 100%;
@@ -30,9 +28,14 @@ footer{
     height: 7%;
     margin-top: 120px;
     position: relative;
+
 }
 
-//Background image base
+#home-footer{
+	position:absolute;
+}
+
+/* Background image base */
 #sfo-illust, #bg-illust, #nyc-illust, #prg-illust, #mxp-illust, #nrt-illust{
 	position: fixed;
 	z-index: -1;
@@ -45,18 +48,29 @@ footer{
 	left: 0;
 }
 
-/*
-StaticPages
- */
+/* StaticPages */
 
 #page-wrapper{
-	background-color: $content-color;opacity: 0.95;
 	padding-top: 30px;
 	padding-bottom: 60px;
 
-    box-shadow: 2px 2px grey;
     min-height: 95%;
     margin: 30px auto -60px;
+}
+
+#page-wrapper{
+	background-color: $content-color;opacity: 0.95;
+    box-shadow: 2px 2px grey;
+}
+
+#home-wrapper{
+	height: 80%;
+}
+
+.home-info{
+	color: white;
+	position: relative;
+	top: 50%;
 }
 
 //Background image of the home page
@@ -72,43 +86,41 @@ StaticPages
 }
 
 #about_btn, #search_btn{
-    -webkit-transition: width 5s; /* Safari */
-    transition: width 5s;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
     &:hover{
     	width: 80px;
     }
 }
 
 
-/*
-Destinations
- */
+/* Destinations */
 
-//Background image of San Francisco
+/* Background image of San Francisco */
 #sfo-illust{
 	background: image-url('sfo.jpg') no-repeat right center fixed;
 	background-size: cover;
 }
 
-//Background image of New York City
+/* Background image of New York City */
 #nyc-illust{
 	background: image-url('nyc.jpg') no-repeat right center fixed;
 	background-size: cover;
 }
 
-//Background image of Prague
+/* Background image of Prague */
 #prg-illust{
 	background: image-url('prg.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
-//Background image of Milan
+/* Background image of Milan */
 #mxp-illust{
 	background: image-url('mxp.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
-//Background image of Tokyo
+/* Background image of Tokyo */
 #nrt-illust{
 	background: image-url('nrt.jpg') no-repeat bottom center fixed;
 	background-size: cover;

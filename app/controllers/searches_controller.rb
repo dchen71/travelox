@@ -6,7 +6,8 @@ class SearchesController < ApplicationController
 
 	def query
 		@response = Net::HTTP.get_response("example.com","/?search=thing&format=json")
-		return render :json => {success: true, reponse: @reponse}
+		@data = JSON.parse(@response)
+		return render :json => {success: true, reponse: @data}
 	end
 
 	private
