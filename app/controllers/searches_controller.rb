@@ -9,12 +9,6 @@ class SearchesController < ApplicationController
 		end
 	end
 
-	def query
-		@response = Net::HTTP.get_response("example.com","/?search=thing&format=json")
-		@data = JSON.parse(@response)
-		return render :json => {success: true, reponse: @data}
-	end
-
 	private
 	def logged_in?
 		redirect_to(root_url) unless signed_in?

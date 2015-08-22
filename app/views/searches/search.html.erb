@@ -10,13 +10,13 @@
 								   :format => :json,
 	                               :remote => true do %>
 			<%= label_tag :From %>
-			<%= text_field_tag :start , '',:required => true %>
-			<%= label_tag :Dest %>
-			<%= text_field_tag :dest , '',:required => true %>
-			<%= submit_tag "Search" %>
+			<%= text_field_tag :start , '', placeholder: 'Enter a departure city', :required => true %>
+			<%= label_tag :To %>
+			<%= text_field_tag :dest , '', placeholder: 'Enter a destination city', :required => true %>
+			<%= submit_tag "Search", class: 'btn btn-success' %>
 		<% end %>
 		
 	</div>
 
-	<div class="routes"></div>
+	<div class="routes container"></div>
 </div>

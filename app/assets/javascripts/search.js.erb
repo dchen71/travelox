@@ -11,10 +11,10 @@ $(document).ready(function() {
 					console.log(data.response.routes[i].indicativePrice.currency);
 					console.log(data.response.routes[i].indicativePrice.price);
 					console.log(data.response.routes[i].stops.length);
-					$('.routes').append('<div class="alert alert-success fade in">' +
-											'<p>Route#' + (i + 1) + '</p>' +
-											'<p>Duration' + data.response.routes[i].duration + '</p>' + 
-											'<p>Route' + data.response.routes[i].name + '</p>' +
+					$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 route-data">' +
+											'<h4>Route#' + (i + 1) + '</h4>' +
+											'<p>Approximate Duration: ' + Math.round(data.response.routes[i].duration / 60) + ' hours ' + '</p>' + 
+											'<p>Method of transportation: ' + data.response.routes[i].name + '</p>' +
 											'<p>Estimated Price: ' + data.response.routes[i].indicativePrice.price + ' ' + data.response.routes[i].indicativePrice.currency + '</p>' +
 											'<p>Number of Stops: ' + data.response.routes[i].stops.length + '</p>' +
 					 					'</div>');
