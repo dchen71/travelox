@@ -25,22 +25,19 @@ $(document).ready(function() {
 				console.log(data.response)
 			}
 			else{
-				$('.routes').prepend('<div class="alert alert-warning fade in">' +
-												  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-				 								  '<p>No matches found</p>' + 
-				 								  '</div>');				
+				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+											'<h3 class="text-center">No routes found</h3>' +
+					 					'</div>');				
 			}
 		}
 		else{
-			$('.routes').prepend('<div class="alert alert-warning fade in">' +
-											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-			 								  '<p>No matches found</p>' + 
-			 								  '</div>');
+				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+											'<h3 class="text-center">No routes found</h3>' +
+					 					'</div>');		
 		}
 	}).on("ajax:error", function(e, xhr, status, error) {
-		$('.routes').prepend('<div class="alert alert-danger fade in">' +
-									      '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
-									      '<p>Error connecting to server</p>' + 
-									      '</div>');
+			$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+										'<h3 class="text-center">No routes found</h3>' +
+				 					'</div>');		
 	});
 });
