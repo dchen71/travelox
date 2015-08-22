@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'destinations/:code' => 'destinations#show', as: 'city'
   get 'search' => 'searches#search'
-  get '/search?:query' => 'search#query', as: 'query'
+  get 'photos' => 'static_pages#photos'
 
 end

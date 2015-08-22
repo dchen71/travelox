@@ -25,6 +25,7 @@
               <li <% if current_page?(city_path(:nrt)) %>class="active"<% end %>><%= link_to 'Tokyo', city_path(:nrt) %></li>
             </ul>
           </li>
+          <li <% if current_page?(photos_path) %>class="active"<% end %>><%= link_to 'Photos', photos_path %></li>
         </ul>
           <% unless signed_in? %>
           <div class="signed_out">

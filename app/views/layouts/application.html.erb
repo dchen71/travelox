@@ -46,6 +46,10 @@
 </div>
 
 <%= javascript_include_tag 'header' %>
+<% if current_page?(search_path) %>
+<%= javascript_include_tag 'search' %>
+<% end %>
+
 
 </body>
 </html>

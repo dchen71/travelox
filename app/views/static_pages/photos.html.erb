@@ -1,0 +1,52 @@
+<% provide(:title, 'About') %>
+<div id="bg-illust">
+	
+</div>
+<div class="container" id="page-wrapper">
+	<div class="container content">
+		<div class="col-md-12">
+			<h1>Photos</h1>
+			<p>Check out photos of some of the hottest attractions in the world</p>
+			<br />
+		</div>
+		
+		<div id="search-carousel" class="carousel slide col-md-4 col-md-push-4" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#search-carousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#search-carousel" data-slide-to="1"></li>
+		    <li data-target="#search-carousel" data-slide-to="2"></li>
+		    <li data-target="#search-carousel" data-slide-to="3"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+			  <%= image_tag("img1.jpg", alt: "Milan") %>
+		    </div>
+
+		    <div class="item">
+			  <%= image_tag("img2.jpg", alt: "Prague") %>
+		    </div>
+
+		    <div class="item">
+			  <%= image_tag("img3.jpg", alt: "Hyogo Prefecture") %>
+		    </div>
+
+		    <div class="item">
+			  <%= image_tag("img4.jpg", alt: "Seoul") %>
+		    </div>
+		  </div>
+
+		  <!-- Left and right controls -->
+		  <a class="left carousel-control" href="#search-carousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#search-carousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+</div>

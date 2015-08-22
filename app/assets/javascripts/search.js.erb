@@ -1,0 +1,43 @@
+//Ajax correctors
+$(document).ready(function() {
+	//Ajax checker the search form
+	$("#search").on("ajax:success", function(e, data, status, xhr) {
+		$('.routes').empty();
+		if(data.success ==  true){
+			if(data.response != null){
+				for(i=0; i< data.response.routes.length; i++){
+					console.log(data.response.routes[i].duration);
+					console.log(data.response.routes[i].name);
+					console.log(data.response.routes[i].indicativePrice.currency);
+					console.log(data.response.routes[i].indicativePrice.price);
+					console.log(data.response.routes[i].stops.length);
+					$('.routes').append('<div class="alert alert-success fade in">' +
+											'<p>Route#' + (i + 1) + '</p>' +
+											'<p>Duration' + data.response.routes[i].duration + '</p>' + 
+											'<p>Route' + data.response.routes[i].name + '</p>' +
+											'<p>Estimated Price: ' + data.response.routes[i].indicativePrice.price + ' ' + data.response.routes[i].indicativePrice.currency + '</p>' +
+											'<p>Number of Stops: ' + data.response.routes[i].stops.length + '</p>' +
+					 					'</div>');
+				}
+				console.log(data.response)
+			}
+			else{
+				$('.routes').prepend('<div class="alert alert-warning fade in">' +
+												  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+				 								  '<p>No matches found</p>' + 
+				 								  '</div>');				
+			}
+		}
+		else{
+			$('.routes').prepend('<div class="alert alert-warning fade in">' +
+											  '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+			 								  '<p>No matches found</p>' + 
+			 								  '</div>');
+		}
+	}).on("ajax:error", function(e, xhr, status, error) {
+		$('.routes').prepend('<div class="alert alert-danger fade in">' +
+									      '<button type="button" class="close" data-dismiss="alert" >×</button>' + 
+									      '<p>Error connecting to server</p>' + 
+									      '</div>');
+	});
+});
