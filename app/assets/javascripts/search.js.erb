@@ -6,6 +6,25 @@ $(document).ready(function() {
 		if(data.success ==  true){
 			if(data.response != null){
 				for(i=0; i< data.response.routes.length; i++){
+					var routes = '';
+					for(j=0; j< data.response.routes[i].segments.length; j++){
+							routes = routes + '<div class="col-md-4 col-xs-4">' +
+													'<h4>Segment ' + (j + 1) + '</h4>';
+							if(data.response.routes[i].segments[j].sName == undefined)
+								routes = routes + '<p class="segment-type">Departure</p><p>' + data.response.routes[i].segments[j].sCode + '</p>';
+							else
+								routes = routes + '<p class="segment-type">Departure</p><p>' + data.response.routes[i].segments[j].sName + '</p>';
+							routes = routes + 	  '<p class="transport">' + data.response.routes[i].segments[j].kind.capitalize() + '</p>';
+							if(data.response.routes[i].segments[j].tName == undefined)
+								routes = routes + '<p class="segment-type">Stop</p><p>' + data.response.routes[i].segments[j].tCode + '</p>';
+							else
+								routes = routes + '<p class="segment-type">Stop</p><p>' + data.response.routes[i].segments[j].tName + '</p>';
+							if(data.response.routes[i].segments[j].subkind == undefined)
+								routes = routes + '<p class="transport">' + data.response.routes[i].segments[j].kind.capitalize() + '</p>';	
+							else
+								routes = routes + '<p class="transport">' + data.response.routes[i].segments[j].subkind.capitalize() + '</p>';
+							routes = routes + '</div>';
+					}
 					$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
 											'<div class="route-data-header col-md-12  col-xs-12">' +
 												'<h3>Route#' + (i + 1) + '</h3>' +
@@ -19,6 +38,9 @@ $(document).ready(function() {
 													'<li>Estimated Price: ' + data.response.routes[i].indicativePrice.price + ' ' + data.response.routes[i].indicativePrice.currency + '</li>' +
 													'<li>Number of Stops: ' + data.response.routes[i].stops.length + '</li>' +
 												'</ul>' +
+											'</div>' +
+											'<div class="route-data-segments col-md-12 col-xs-12">' +
+												routes + 
 											'</div>' +
 					 					'</div>');
 				}
@@ -41,3 +63,8 @@ $(document).ready(function() {
 				 					'</div>');		
 	});
 });
+
+//Method to return uppercase of first letter
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
