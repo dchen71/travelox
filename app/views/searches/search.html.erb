@@ -5,14 +5,14 @@
 <div class="container" id="page-wrapper">
 	<div class="search">
 		<h2>Search</h2>
-		<p>Try putting the city you are departing from and your city of destination and find out all the ways to get there</p>
+		<p>Try putting the city you are departing from and your destination and find out all the ways to get there</p>
 		<%= form_tag search_path, method: :get, id: 'search',
 								   :format => :json,
 	                               :remote => true do %>
 			<%= label_tag :From %>
-			<%= text_field_tag :start , '', placeholder: 'Enter a departure city', :required => true %>
+			<%= text_field_tag :start , '', placeholder: 'Enter a departure city/airport/etc', :required => true %>
 			<%= label_tag :To %>
-			<%= text_field_tag :dest , '', placeholder: 'Enter a destination city', :required => true %>
+			<%= text_field_tag :dest , '', placeholder: 'Enter a destination city/airport/etc', :required => true %>
 			<%= submit_tag "Search", class: 'btn btn-success' %>
 		<% end %>
 		

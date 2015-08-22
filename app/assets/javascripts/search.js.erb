@@ -6,17 +6,20 @@ $(document).ready(function() {
 		if(data.success ==  true){
 			if(data.response != null){
 				for(i=0; i< data.response.routes.length; i++){
-					console.log(data.response.routes[i].duration);
-					console.log(data.response.routes[i].name);
-					console.log(data.response.routes[i].indicativePrice.currency);
-					console.log(data.response.routes[i].indicativePrice.price);
-					console.log(data.response.routes[i].stops.length);
-					$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 route-data">' +
-											'<h4>Route#' + (i + 1) + '</h4>' +
-											'<p>Approximate Duration: ' + Math.round(data.response.routes[i].duration / 60) + ' hours ' + '</p>' + 
-											'<p>Method of transportation: ' + data.response.routes[i].name + '</p>' +
-											'<p>Estimated Price: ' + data.response.routes[i].indicativePrice.price + ' ' + data.response.routes[i].indicativePrice.currency + '</p>' +
-											'<p>Number of Stops: ' + data.response.routes[i].stops.length + '</p>' +
+					$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+											'<div class="route-data-header col-md-12  col-xs-12">' +
+												'<h3>Route#' + (i + 1) + '</h3>' +
+												'<h4 class="col-md-4 col-xs-4">From: ' + data.response.places[0].longName + '</h4>' +
+												'<h4 class="col-md-offset-4 col-md-4 col-xs-offset-4 col-xs-4">To: ' + data.response.places[1].longName + '</h4>' +
+											'</div>' +
+											'<div class="route-data-content col-md-12 col-xs-12">' +
+												'<p class="col-md-8 col-xs-8">Method of transportation: ' + data.response.routes[i].name + '</p>' +
+												'<ul class="col-md-4 col-xs-4 list-unstyled">' +
+													'<li>Approximate Duration: ' + Math.round(data.response.routes[i].duration / 60) + ' hours ' + '</li>' + 
+													'<li>Estimated Price: ' + data.response.routes[i].indicativePrice.price + ' ' + data.response.routes[i].indicativePrice.currency + '</li>' +
+													'<li>Number of Stops: ' + data.response.routes[i].stops.length + '</li>' +
+												'</ul>' +
+											'</div>' +
 					 					'</div>');
 				}
 				console.log(data.response)

@@ -176,4 +176,10 @@ footer{
 .route-data{
 	border: 2px black dotted;
 	margin-bottom: 10px;
+	.route-data-header{
+		border-bottom-style: solid;
+		border-color: #C9C9C9;
+		border-width: 2px;
+		margin-bottom: 10px;
+	}
 }
