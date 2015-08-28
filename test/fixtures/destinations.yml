@@ -4,8 +4,49 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+mxp: 
+  city: Milan
+  background_id: mxp-illust
+  code: MXP
+  overview: its a Palace  
+  transportation: Via burro
+  food: Spaghetti
+  entertainment: Fun Fun Fun
+
+nrt: 
+  city: Tokyo
+  background_id: nrt-illust
+  code: NRT
+  overview: too many gundams  
+  transportation: via teleporter  
+  food: sushi  
+  entertainment: gundam
+
+nyc:
+  city: New York
+  background_id: nyc-illust 
+  code: NYC
+  overview: godzilla  
+  culture: bagels  
+  transportation: pony  
+  food: falafel  
+  entertainment: cats
+
+prg:
+  city: Prague
+  background_id: prg-illust
+  code: PRG
+  overview: castles  
+  culture: angry waiters  
+  transportation: walk  
+  food: pivo  
+  entertainment: strange show
+
+sfo:
+  city: San Francisco
+  background_id: sfo-illust
+  code: SFO
+  overview: hills  
+  culture: startup  
+  food: tacos  
+  entertainment: hills
