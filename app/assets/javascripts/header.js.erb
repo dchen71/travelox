@@ -39,7 +39,7 @@ $(document).ready(function() {
 			 								  '<p>User successfully create, logging in</p>' + 
 			 								  '</div>');
 			$('#signup-modal').modal('hide');
-			$('.signed_out').remove();
+			$('.signed_out').hide();
 			$('#navbar').append('<div class="signed_in">' + 
             					'<ul class="nav navbar-nav navbar-right">' + 
               					'<li><a href="/search">Search</a></li>' +
@@ -72,7 +72,7 @@ $(document).ready(function() {
 			 								  '<p>Successfully logged in</p>' + 
 			 								  '</div>');
 			$('#login-modal').modal('hide');
-			$('.signed_out').remove();
+			$('.signed_out').hide();
 			$('#navbar').append('<div class="signed_in">' + 
             					'<ul class="nav navbar-nav navbar-right">' + 
               					'<li><a href="/search">Search</a></li>' +
@@ -96,4 +96,22 @@ $(document).ready(function() {
 									      '<p>Error connecting to server</p>' + 
 									      '</div>');
 	});
+
+	signOut = function() {
+	  var params = {
+	    dataType: "json",
+	    type: "DELETE",
+	    url: this.urlRoot + "/sign_out.json"
+	  };
+	  var self = this;
+	  return $.ajax(params).done(function(data) {
+	    self.set("csrf-token", data.csrfToken);
+	    self.unset("user");
+	  });
+	}
+
+	$('#logout').click(function(){
+		signOut();
+		
+	})
 });
