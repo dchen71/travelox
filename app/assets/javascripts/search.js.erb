@@ -8,7 +8,7 @@ $(document).ready(function() {
 				for(i=0; i< data.response.routes.length; i++){
 					var routes = '';
 					for(j=0; j< data.response.routes[i].segments.length; j++){
-							routes = routes + '<div class="col-md-4 col-xs-4">' +
+							routes = routes + '<div class="col-md-4 col-xs-12">' +
 													'<h4>Segment ' + (j + 1) + '</h4>';
 							if(data.response.routes[i].segments[j].sName == undefined)
 								routes = routes + '<p class="segment-type">Departure</p><p>' + data.response.routes[i].segments[j].sCode + '</p>';
@@ -25,7 +25,7 @@ $(document).ready(function() {
 								routes = routes + '<p class="transport">' + data.response.routes[i].segments[j].subkind.capitalize() + '</p>';
 							routes = routes + '</div>';
 					}
-					var content = '<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+					var content = '<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-12 route-data">' +
 											'<div class="route-data-header col-md-12  col-xs-12">' +
 												'<h3>Route#' + (i + 1) + '</h3>' +
 												'<h4 class="col-md-4 col-xs-4">From: ' + data.response.places[0].longName + '</h4>' +
@@ -52,18 +52,18 @@ $(document).ready(function() {
 				}
 			}
 			else{
-				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-12 route-data">' +
 											'<h3 class="text-center">No routes found</h3>' +
 					 					'</div>');				
 			}
 		}
 		else{
-				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+				$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-12 route-data">' +
 											'<h3 class="text-center">No routes found</h3>' +
 					 					'</div>');		
 		}
 	}).on("ajax:error", function(e, xhr, status, error) {
-			$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-8 col-xs-push-2 col-xs-pull-2 route-data">' +
+			$('.routes').append('<div class="col-md-8 col-md-push-2 col-md-pull-2 col-xs-12 route-data">' +
 										'<h3 class="text-center">No routes found</h3>' +
 				 					'</div>');		
 	});
