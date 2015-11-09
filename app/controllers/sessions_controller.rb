@@ -10,4 +10,6 @@ class SessionsController < Devise::SessionsController
     yield resource if block_given?
     return render :json => {success: true, location: after_sign_in_path_for(resource)}
   end
+
+  
 end  
