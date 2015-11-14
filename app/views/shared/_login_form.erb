@@ -3,14 +3,20 @@
                                :html => {:id => "log_in_user"},
                                :format => :json,
                                :remote => true ) do |f| %>
-          <div class="form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, required: true, class: "form-control" %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder:"Email" %>
           </div>
         
-          <div class="form-group">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control" %>
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "Password" %>
           </div>
       
           <% if devise_mapping.rememberable? -%>
@@ -21,6 +27,7 @@
           <% end -%>
         
           <div class="actions">
+            <br>
             <%= f.submit "Log in", class: 'btn btn-success', id: 'login_btn' %>
           </div>
         <% end %>

@@ -5,25 +5,33 @@
                                :remote => true ) do |f| %>
           <%= devise_error_messages! %>
         
-          <div class="form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, required: true, class: "form-control" %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "Email" %>
           </div>
         
-          <div class="form-group">
-            <%= f.label :password %>
+          <br>
 
-            <em>(<%= 8 %> characters minimum)</em>
-            <br />
-            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 8, class: "form-control" %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 8, class: "form-control", placeholder: "Password(8 character minimum" %>
           </div>
         
-          <div class="form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 8, class: "form-control" %>
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 8, class: "form-control", placeholder: "Repeat password" %>
           </div>
         
           <div class="actions">
+            <br>
             <%= f.submit "Sign up", class: 'btn btn-success' %>
           </div>
         <% end %> 
